@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Restaurant Finder</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css">
+	<link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+
+	<div class="container" ng-controller="HomePageCtrl">
+		<div class="row" id="header">
+			{{test}}
+			{{model.city}}
+		<div class="row" id="container">
+			<div class="col-md-4">
+				<div class="form-group">
+			    	<label for="city">City</label>
+			    	<ui-select ng-model="model.city"
+				             theme="bootstrap"
+				             style="width: 300px;">
+					    <ui-select-match placeholder="Enter city">{{$select.selected.name}}</ui-select-match>
+					    <ui-select-choices repeat="item in cities track by $index">
+					      <div ng-bind-html="item.name | highlight: $select.search"></div>
+					    </ui-select-choices>
+				  </ui-select>
+
+			  	</div>
+				
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+			    	<label for="locality">Locality</label>
+			    	<ui-select name="locality" ng-model="model.locality"
+				             theme="bootstrap"
+				             style="width: 300px;">
+					    <ui-select-match placeholder="Enter Location">{{$select.selected.name}}</ui-select-match>
+					    <ui-select-choices repeat="item in localities track by $index">
+					      <div ng-bind-html="item.name | highlight: $select.search"></div>
+					    </ui-select-choices>
+				  </ui-select>
+			  	</div>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-success" ng-click="onSearch()">Search</button>
+			</div>
+
+		</div>
+	
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-select/dist/select.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/home/HomePageCtrl.js"></script>
+</body>
+</html>

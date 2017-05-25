@@ -1,0 +1,19 @@
+{
+  "name": "RestaurantFinder_Angular",
+  "version": "1.0.0",
+  "description": "Sample app using Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jintoppy/RestaurantFinder_Angular.git"
+  },
+  "author": "Jinto Jose<jintoppy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jintoppy/RestaurantFinder_Angular/issues"
+  },
+  "homepage": "https://github.com/jintoppy/RestaurantFinder_Angular"
+}
